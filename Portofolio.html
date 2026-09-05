@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Portofolio | Winnie Selvia&amp; Junior Video Editor & Designer</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#454747",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "outline-variant": "#444748",
+                        "surface-container-high": "#2a2a2a",
+                        "primary": "#ffffff",
+                        "secondary-container": "#0071c7",
+                        "on-tertiary-fixed-variant": "#4f319c",
+                        "on-primary": "#2f3131",
+                        "secondary": "#a2c9ff",
+                        "surface-bright": "#3a3939",
+                        "tertiary": "#ffffff",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-fixed-dim": "#a2c9ff",
+                        "inverse-primary": "#5d5f5f",
+                        "background": "#141313",
+                        "on-secondary-fixed": "#001c38",
+                        "on-secondary-fixed-variant": "#004882",
+                        "on-background": "#e5e2e1",
+                        "surface": "#141313",
+                        "surface-dim": "#141313",
+                        "tertiary-fixed-dim": "#cebdff",
+                        "surface-container-low": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary": "#00315c",
+                        "on-secondary-container": "#f0f4ff",
+                        "surface-variant": "#353434",
+                        "on-error": "#690005",
+                        "outline": "#8e9192",
+                        "surface-container-highest": "#353434",
+                        "primary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed": "#21005e",
+                        "on-primary-container": "#636565",
+                        "surface-tint": "#c6c6c7",
+                        "on-tertiary-container": "#6d51bc",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#c4c7c8",
+                        "secondary-fixed": "#d3e4ff",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#1a1c1c",
+                        "primary-container": "#e2e2e2",
+                        "surface-container": "#201f1f",
+                        "tertiary-container": "#e8ddff",
+                        "tertiary-fixed": "#e8ddff",
+                        "on-surface": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary": "#381385",
+                        "inverse-on-surface": "#313030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "section-gap": "120px",
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "stack-lg": "32px",
+                        "container-max": "1280px",
+                        "margin-x": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #141313;
+            color: #e5e2e1;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .glass-panel {
+            background: rgba(22, 27, 34, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(88, 166, 255, 0.05);
+        }
+        .skill-glow:hover {
+            border-color: #cebdff;
+            box-shadow: 0 0 15px rgba(206, 189, 255, 0.3);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .typing-container::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        #loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #141313;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease-out, visibility 0.5s;
+        }
+        .loader-bar {
+            width: 200px;
+            height: 2px;
+            background: rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .loader-progress {
+            position: absolute;
+            height: 100%;
+            background: white;
+            width: 0%;
+            transition: width 0.3s ease-out;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #141313;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #444748;
+            border-radius: 10px;
+        }
+        .neon-circle {
+            box-shadow: 0 0 40px rgba(162, 201, 255, 0.3), inset 0 0 20px rgba(162, 201, 255, 0.2);
+            border: 2px solid rgba(162, 201, 255, 0.5);
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #444748, transparent);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-secondary/30 selection:text-white">
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="flex flex-col items-center gap-4">
+            <span class="font-headline-sm text-headline-sm tracking-tighter">Portofolio Winnie Selvia</span>
+            <div class="loader-bar">
+                <div class="loader-progress" id="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-white/10 shadow-[0_8px_32px_0_rgba(88,166,255,0.1)]">
+        <div class="flex justify-between items-center h-20 px-margin-x max-w-container-max mx-auto">
+            <div class="font-headline-sm text-headline-sm tracking-tighter text-primary">Portofolio Winnie Selvia</div>
+            <div class="hidden md:flex gap-stack-lg items-center">
+                <a class="font-label-md text-label-md text-primary font-bold border-b-2 border-secondary pb-1" href="#home">Beranda</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#about">Tentang</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#skills">Keahlian</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#projects">Proyek</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#education">Pendidikan</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#contact">Kontak</a>
+                <a href="#contact" class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md hover:scale-105 transition-transform active:scale-95 inline-block text-center">Hubungi Saya</a>
+            </div>
+            <!-- Mobile Toggle -->
+            <button class="md:hidden text-primary" id="mobile-menu-btn">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div class="hidden md:hidden bg-surface-container border-b border-white/10 px-margin-x py-4 space-y-3" id="mobile-menu">
+            <a class="block font-label-md text-on-surface-variant hover:text-primary" href="#Home">Beranda</a>
+            <a class="block font-label-md text-on-surface-variant hover:text-primary" href="#About">Tentang</a>
+            <a class="block font-label-md text-on-surface-variant hover:text-primary" href="#Skills">Keahlian</a>
+            <a class="block font-label-md text-on-surface-variant hover:text-primary" href="#Projects">Proyek</a>
+            <a class="block font-label-md text-on-surface-variant hover:text-primary" href="#Education">Pendidikan</a>
+            <a class="block font-label-md text-on-surface-variant hover:text-primary" href="#Contact">Kontak</a>
+        </div>
+    </nav>
+
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col justify-center items-center px-margin-x text-center gap-stack-lg pt-20" id="home">
+<!-- Foto Profil dengan Efek Hover Ganti Gambar -->
+<div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full neon-circle p-1 overflow-hidden transition-all duration-700 hover:scale-105 group cursor-pointer">
+    <!-- Foto Utama (Muncul Pertama) -->
+    <img class="w-full h-full object-cover rounded-full transition-opacity duration-500 group-hover:opacity-0" src="Profile.jpeg"/>
+    
+    <!-- Foto Kedua (Muncul Saat Hover) -->
+    <img class="absolute inset-0 w-full h-full object-cover rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100 p-1" src="Foto.jpeg" alt="Foto Winnie Hover"/>
+</div>
+            <div class="max-w-4xl space-y-4">
+                <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg tracking-tighter reveal">
+                    Hello, I'm <span class="text-secondary">Winnie Selvia</span>
+                </h1>
+                <p class="font-headline-sm text-headline-sm text-on-surface-variant typing-container reveal" id="typing-text"></p>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto reveal">
+                    Antusias dalam dunia teknologi dan desain digital.
+                </p>
+<div class="flex flex-wrap justify-center gap-stack-md pt-stack-md reveal">
+    <a href="#projects" class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all">Lihat Proyek</a>
+    
+    <!-- TOMBOL UNDUH CV -->
+    <a href="CV_Winnie_Selvia.pdf" download="CV_Winnie_Selvia.pdf" target="_blank" class="border border-secondary text-secondary px-8 py-3 rounded-full font-label-md hover:bg-secondary/10 transition-all">Unduh CV</a>
+</div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="py-section-gap px-margin-x max-w-container-max mx-auto" id="about">
+            <div class="grid md:grid-cols-2 gap-stack-lg items-center">
+                <div class="reveal">
+                    <h2 class="font-headline-md text-headline-md mb-stack-md">Tentang Saya</h2>
+                    <div class="h-1 w-20 bg-secondary mb-stack-lg"></div>
+                    <p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+                        Saya lulusan SMA Yos Sudarso yang memiliki dedikasi tinggi dan minat besar dalam dunia teknologi maupun video editing. Saya percaya bahwa kombinasi antara rasa ingin tahu yang kuat dan ketekunan belajar adalah kunci untuk masa depan.
+                    </p>
+                    <p class="text-body-lg font-body-lg text-on-surface-variant mt-stack-md leading-relaxed">
+                        Fokus saya saat ini adalah mengembangkan kemampuan dalam administrasi keuangan dalam sebuah perusahaan dan mengembangkan skill video editing saya, sembari mencari kesempatan untuk berkontribusi dan tumbuh dalam tim yang dinamis.
+                    </p>
+                </div>
+<div class="grid grid-cols-2 gap-stack-md reveal">
+    <div class="glass-panel p-stack-lg rounded-xl flex flex-col items-center text-center">
+        <span class="material-symbols-outlined text-secondary text-4xl mb-2">auto_stories</span>
+        <span class="font-headline-sm text-headline-sm">0</span>
+        <span class="font-label-sm text-label-sm text-on-surface-variant">Proyek Yang Sedang Dikerjakan</span>
+    </div>
+    <div class="glass-panel p-stack-lg rounded-xl flex flex-col items-center text-center">
+        <span class="material-symbols-outlined text-secondary text-4xl mb-2">workspace_premium</span>
+        <span class="font-headline-sm text-headline-sm">3</span>
+        <span class="font-label-sm text-label-sm text-on-surface-variant">Sertifikat</span>
+    </div>
+    <div class="glass-panel p-stack-lg rounded-xl flex flex-col items-center text-center col-span-2">
+        <!-- IKON DIUBAH MENJADI folder_special DAN UKURAN DIGANTI KE text-4xl -->
+        <span class="material-symbols-outlined text-secondary text-4xl mb-2">folder_special</span>
+        <span class="font-headline-sm text-headline-sm">16+</span>
+        <span class="font-label-sm text-label-sm text-on-surface-variant">Hasil Project Saya</span>
+    </div>
+</div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="py-section-gap px-margin-x bg-surface-container-lowest" id="skills">
+            <div class="max-w-container-max mx-auto">
+                <h2 class="font-headline-md text-headline-md mb-stack-lg text-center reveal">Keahlian/Skills</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-stack-md">
+                    <!-- Microsoft Office -->
+                    <div class="glass-panel p-stack-md rounded-xl skill-glow transition-all duration-300 reveal">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-label-md text-label-md">Microsoft Office</span>
+                            <span class="font-label-sm text-label-sm text-secondary">85%</span>
+                        </div>
+                        <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-secondary w-[85%]"></div>
+                        </div>
+                    </div>
+                    <!-- Team Work -->
+                    <div class="glass-panel p-stack-md rounded-xl skill-glow transition-all duration-300 reveal">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-label-md text-label-md">Team Work</span>
+                            <span class="font-label-sm text-label-sm text-secondary">90%</span>
+                        </div>
+                        <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-secondary w-[90%]"></div>
+                        </div>
+                    </div>
+                    <!-- Video Editing -->
+                    <div class="glass-panel p-stack-md rounded-xl skill-glow transition-all duration-300 reveal">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-label-md text-label-md">Video Editing</span>
+                            <span class="font-label-sm text-label-sm text-secondary">92%</span>
+                        </div>
+                        <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-secondary w-[92%]"></div>
+                        </div>
+                    </div>
+                    <!-- Time Management -->
+                    <div class="glass-panel p-stack-md rounded-xl skill-glow transition-all duration-300 reveal">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-label-md text-label-md">Time Management</span>
+                            <span class="font-label-sm text-label-sm text-secondary">76%</span>
+                        </div>
+                        <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-secondary w-[76%]"></div>
+                        </div>
+                    </div>
+                    <!-- Design -->
+                    <div class="glass-panel p-stack-md rounded-xl skill-glow transition-all duration-300 reveal">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-label-md text-label-md">Design</span>
+                            <span class="font-label-sm text-label-sm text-secondary">90%</span>
+                        </div>
+                        <div class="h-1 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-secondary w-[90%]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="py-section-gap px-margin-x max-w-container-max mx-auto" id="projects">
+            <h2 class="font-headline-md text-headline-md mb-stack-lg reveal">Project Saya</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-stack-lg">
+                <!-- Project 1 -->
+                <div class="glass-panel rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-500 reveal">
+                    <div class="relative h-64 overflow-hidden">
+                        <div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" style="background-image: url('defores.jpg')"></div>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                            <button class="bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center" onclick="openModal('project1')"><span class="material-symbols-outlined">visibility</span></button>
+                        </div>
+                    </div>
+                    <div class="p-stack-lg">
+                        <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Design</span>
+                        <h3 class="font-headline-sm text-headline-sm mt-2">Poster</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mt-2">Beberapa Poster Yang Sudah Saya Buat Dengan Ide Saya.</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="glass-panel rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-500 reveal">
+                    <div class="relative h-64 overflow-hidden">
+                        <div class="w-full h-full bg-cover bg-center group-hover:scale-110 transition-transform duration-700" style="background-image: url('rawr.jpeg')"></div>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                            <button class="bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center" onclick="openModal('project2')"><span class="material-symbols-outlined">visibility</span></button>
+                        </div>
+                    </div>
+                    <div class="p-stack-lg">
+                        <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Video Editing</span>
+                        <h3 class="font-headline-sm text-headline-sm mt-2">Video</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant mt-2">Salah satu video editan saya yang saya suka dengan efek maupun transisinya.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience/Education Section -->
+        <section class="py-section-gap px-margin-x max-w-container-max mx-auto" id="education">
+            <div class="max-w-container-max mx-auto">
+            <div class="grid md:grid-cols-2 gap-section-gap">
+            
+            <!-- KIRI: PENDIDIKAN -->
+<div>
+    <h2 class="font-headline-md text-headline-md mb-stack-lg reveal">Pendidikan</h2>
+    <!-- Mengubah space-y-stack-lg menjadi space-y-6 agar jarak antar pendidikan lebih dekat -->
+    <div class="relative border-l-2 border-secondary/30 ml-3 pl-6 space-y-6">
+        
+        <!-- Item 1: SMA -->
+        <div class="relative reveal">
+            <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 bg-secondary rounded-full ring-4 ring-surface-container-low"></div>
+            <span class="font-label-sm text-label-sm text-secondary block mb-0.5">2023 - 2026</span>
+            <h3 class="font-headline-sm text-headline-sm">SMA Yos Sudarso Batam</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-1">Mapel Pilihan : MTKTL, EnglishTL, Ekonomi, dan Informatika</p>
+            <p class="text-on-surface-variant/70 mt-1 text-body-sm">Aktif dalam aktivitas podcast di Sekolah sebagai designer (2023-2024).</p>
+        </div>
+
+        <!-- Item 2: UIB -->
+        <div class="relative reveal">
+            <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 bg-secondary rounded-full ring-4 ring-surface-container-low"></div>
+            <span class="font-label-sm text-label-sm text-secondary block mb-0.5">2026 - ongoing</span>
+            <h3 class="font-headline-sm text-headline-sm">Universitas Internasional Batam</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Prodi Sistem Informasi</p>
+        </div>
+
+    </div>
+</div>
+
+            <!-- KANAN: SERTIFIKAT BELAJAR -->
+            <div>
+                <h2 class="font-headline-md text-headline-md mb-stack-lg reveal">Sertifikat Belajar</h2>
+                <div class="space-y-4">
+                    <!-- Kartu Sertifikat 1 -->
+                    <div class="glass-panel p-5 rounded-2xl flex items-center gap-4 reveal">
+                        <div class="text-secondary flex-shrink-0">
+                            <span class="material-symbols-outlined text-3xl">verified</span>
+                        </div>
+                        <div>
+                            <h3 class="font-headline-sm text-body-lg font-semibold">Seminar Data Analyst</h3>
+                            <p class="text-on-surface-variant/70 text-body-sm">Revou • 2026</p>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Sertifikat 2 -->
+                    <div class="glass-panel p-5 rounded-2xl flex items-center gap-4 reveal">
+                        <div class="text-secondary flex-shrink-0">
+                            <span class="material-symbols-outlined text-3xl">verified</span>
+                        </div>
+                        <div>
+                            <h3 class="font-headline-sm text-body-lg font-semibold">Story Challenge PIB Ekskul</h3>
+                            <p class="text-on-surface-variant/70 text-body-sm">PIB • 2025</p>
+                        </div>
+                    </div>
+                                        <!-- Kartu Sertifikat 3 -->
+                    <div class="glass-panel p-5 rounded-2xl flex items-center gap-4 reveal">
+                        <div class="text-secondary flex-shrink-0">
+                            <span class="material-symbols-outlined text-3xl">verified</span>
+                        </div>
+                        <div>
+                            <h3 class="font-headline-sm text-body-lg font-semibold">TOEFL</h3>
+                            <p class="text-on-surface-variant/70 text-body-sm">GOI • 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <!-- Contact Section -->
+        <section class="py-section-gap px-margin-x max-w-container-max mx-auto" id="contact">
+            <div class="glass-panel p-stack-lg md:p-16 rounded-3xl grid md:grid-cols-2 gap-stack-lg reveal">
+                <div>
+                    <h2 class="font-display-lg-mobile md:font-headline-md text-display-lg-mobile md:text-headline-md tracking-tight">Mari Berkenalan<br/><span class="text-secondary">Dengan Saya.</span></h2>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant mt-stack-md">Saya sedang mencari kesempatan kerja pertama saya. Mari berkolaborasi dan tumbuh bersama.</p>
+                    <div class="mt-stack-lg space-y-4">
+                        <div class="flex items-center gap-4 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-secondary">mail</span>
+                            <span>winnieselvia30@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-secondary">location_on</span>
+                            <span>Batam, Indonesia</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="space-y-stack-md" onsubmit="event.preventDefault(); alert('Pesan berhasil terkirim! Mohon menunggu balasan dari saya. Terimakasih');">
+                    <div class="space-y-1">
+                        <label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Nama Lengkap</label>
+                        <input class="w-full bg-transparent border-b border-white/10 py-3 focus:outline-none focus:border-secondary transition-all placeholder:text-white/20" placeholder="Your Name" type="text" required/>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Pesan</label>
+                        <textarea class="w-full bg-transparent border-b border-white/10 py-3 focus:outline-none focus:border-secondary transition-all placeholder:text-white/20 resize-none" placeholder="Tuliskan pesan Anda di sini..." rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-on-primary py-4 rounded-xl font-label-md hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all">Kirim Pesan</button>
+                </form>
+                <script>
+document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const phoneNumber = "6281365205109"; 
+    
+    const name = document.getElementById('waName').value;
+    const message = document.getElementById('waMessage').value;
+    
+    const text = `Halo, saya ${name}.%0A%0APesan:%0A${message}`;
+    
+    window.open(`https://wa.me/081365205109?text=${text}`, '_blank');
+});
+</script>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest w-full py-stack-lg border-t border-white/5">
+        <div class="flex flex-col md:flex-row justify-between items-center px-margin-x max-w-container-max mx-auto gap-stack-md">
+            <div class="font-headline-sm text-headline-sm text-primary tracking-tighter">Nice To Meet You!</div>
+            <p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">Portofolio Winnie Selvia.</p>
+            <div class="flex gap-stack-md">
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="https://www.instagram.com/winnyselviaa?igsi=MTZmOWlzY3JxZWZibw==" target="_blank">Instagram</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="https://www.linkedin.com/in/winnie-selvia-7a8b8b20a/" target="_blank">LinkedIn</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="https://www.tiktok.com/@wiseln?_r=1&_t=ZS-99Tsq1ccalG" target="_blank">Tiktok</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="fixed bottom-8 right-8 w-12 h-12 glass-panel rounded-full opacity-0 translate-y-10 transition-all duration-300 z-50 flex items-center justify-center hover:bg-secondary hover:text-on-secondary" id="back-to-top">
+        <span class="material-symbols-outlined">expand_less</span>
+    </button>
+
+    <!-- Project Modal Element -->
+    <div class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6" id="project-modal">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeModal()"></div>
+        <div class="glass-panel w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl relative z-10 custom-scrollbar">
+            <button class="absolute top-6 right-6 text-primary hover:text-secondary shadow-lg bg-black/20 rounded-full p-1" onclick="closeModal()">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div class="p-stack-lg md:p-12" id="modal-content">
+                <!-- Dynamic Content Loaded by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Responsive Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Typing animation
+        const typingText = document.getElementById('typing-text');
+        const phrases = ['Hello There!', 'Nice To Meet You!', 'Lets Get To Know About Me!'];
+        let phraseIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentPhrase = phrases[phraseIdx];
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIdx === currentPhrase.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                phraseIdx = (phraseIdx + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        // Loading simulation
+        window.addEventListener('load', () => {
+            const progress = document.getElementById('loader-progress');
+            const loader = document.getElementById('loader');
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        loader.style.opacity = '0';
+                        loader.style.visibility = 'hidden';
+                        setTimeout(type, 500); 
+                    }, 500);
+                } else {
+                    width += 5;
+                    progress.style.width = width + '%';
+                }
+            }, 30);
+        });
+
+        // Scroll Reveal
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            reveals.forEach((el) => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add("active");
+                }
+            });
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); 
+
+        // Back to top button
+        const btt = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                btt.classList.remove('opacity-0', 'translate-y-10');
+                btt.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                btt.classList.remove('opacity-100', 'translate-y-0');
+                btt.classList.add('opacity-0', 'translate-y-10');
+            }
+        });
+        btt.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Modal Data & Logic
+        const modal = document.getElementById('project-modal');
+        const modalContent = document.getElementById('modal-content');
+        
+        const projectsData = {
+            'project1': {
+                title: 'Poster',
+                category: 'Design',
+                desc: 'Beberapa Poster Yang Sudah Saya Buat Dengan Ide Saya.',
+                tech: ['Poster', 'Idea', 'Canva'],
+                img: 'wkwk.jpeg',
+                link : 'https://drive.google.com/drive/folders/1jXazR6Xrzd6wersxjkdb9IVJ5Qo0aM7c?usp=sharing'
+            },
+            'project2': {       
+                title: 'Video',
+                category: 'Video Editing',
+                desc: 'Salah satu video editan saya yang saya suka dengan efek maupun transisinya. Saya juga sedang mengembangkan skill editing saya dan ingin mencoba belajar menggunakan After Effect (AE)',
+                tech: ['Alight Motion', 'Capcut'],
+                img: 'EdIT.jpeg',
+                link : 'https://drive.google.com/drive/folders/1szP0_a7cXdC7ZbpeigJvbsjaRlBWGIKL?usp=drive_link'
+            }
+        };
+
+        function openModal(id) {
+            const data = projectsData[id];
+            modalContent.innerHTML = `
+                <div class="grid md:grid-cols-2 gap-stack-lg pt-6 md:pt-0">
+    <div class="h-64 md:h-full glass-panel rounded-2xl overflow-hidden">
+        <div style="background-image: url('${data.img}')" class="w-full h-full bg-cover bg-center"></div>
+    </div>
+    <div class="space-y-stack-md flex flex-col justify-center">
+        <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">${data.category}</span>
+        <h2 class="font-headline-md text-headline-md">${data.title}</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">${data.desc}</p>
+        <div class="flex flex-wrap gap-2 pt-4">
+            ${data.tech.map(t => `<span class="px-3 py-1 bg-white/5 rounded-full text-xs text-secondary">${t}</span>`).join('')}
+        </div>
+        <div class="flex gap-4 pt-8">
+            <!-- GANTI DENGAN KODE TAG <a> DI BAWAH INI -->
+            <a href="${data.link}" target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md hover:opacity-90 transition-opacity inline-block text-center">
+                Lihat Proyek
+            </a>
+        </div>
+    </div>
+</div>
+            `;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Active Nav indicator
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav .hidden a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.className = "font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-300";
+                const href = link.getAttribute('href');
+                if (href && href.substring(1) === current) {
+                    link.className = "font-label-md text-label-md text-primary font-bold border-b-2 border-secondary pb-1";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
