@@ -467,48 +467,12 @@
                         <div class="flex items-center gap-4 text-on-surface-variant">
                             <span class="material-symbols-outlined text-secondary">location_on</span>
                             <span>Batam, Indonesia</span>
+                        <div class="flex items-center gap-4 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-secondary">phone</span>
+                            <span>+62 813-6520-5109</span>
                         </div>
                     </div>
                 </div>
-                <form class="space-y-stack-md" onsubmit="event.preventDefault(); alert('Pesan berhasil terkirim! Mohon menunggu balasan dari saya. Terimakasih');">
-                    <div class="space-y-1">
-                        <label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Nama Lengkap</label>
-                        <input class="w-full bg-transparent border-b border-white/10 py-3 focus:outline-none focus:border-secondary transition-all placeholder:text-white/20" placeholder="Your Name" type="text" required/>
-                    </div>
-                    <div class="space-y-1">
-                        <label class="font-label-sm text-label-sm text-on-surface-variant uppercase">Pesan</label>
-                        <textarea class="w-full bg-transparent border-b border-white/10 py-3 focus:outline-none focus:border-secondary transition-all placeholder:text-white/20 resize-none" placeholder="Tuliskan pesan Anda di sini..." rows="4" required></textarea>
-                    </div>
-                   <form id="whatsappForm">
-    <!-- Pastikan input nama & pesan punya id waName dan waMessage -->
-    <!-- Tambahkan input kamu di sini jika belum ada -->
-
-    <button type="submit" class="w-full bg-primary text-on-primary py-4 rounded-xl font-label-md hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all">
-        Kirim Pesan
-    </button>
-</form>
-
-<script>
-document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const phoneNumber = "6281365205109"; 
-    
-    // Mengambil nilai input
-    const nameInput = document.getElementById('waName');
-    const messageInput = document.getElementById('waMessage');
-    
-    // Validasi sederhana agar tidak error jika elemen tidak ditemukan
-    const name = nameInput ? nameInput.value : '';
-    const message = messageInput ? messageInput.value : '';
-    
-    const rawText = `Halo, saya ${name}.\n\nPesan:\n${message}`;
-    const encodedText = encodeURIComponent(rawText);
-    
-    // Menggunakan window.location.href agar TIDAK diblokir Pop-up Blocker browser
-    window.location.href = `https://wa.me/${phoneNumber}?text=${encodedText}`;
-});
-</script>
             </div>
 
         </section>
